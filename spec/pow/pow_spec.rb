@@ -30,17 +30,21 @@ end
 describe "Add" do
   it "should expand the current path" do
     current_dir = `pwd`.chomp
-    Pow::Runner.should_receive(:run).with("ln -s #{current_dir} #{Pow::POW_DIR}")
-    Pow::Add.new('.')
+    Pow::Runner.should_receive(:run).with "ln -s #{current_dir} #{Pow::POW_DIR}"
+    Pow::Add.new '.'
   end
 
   it "should use the specified path and app name" do
-    Pow::Runner.should_receive(:run).with("ln -s /a/path #{Pow::POW_DIR}appname")
-    Pow::Add.new('/a/path', 'appname')
+    Pow::Runner.should_receive(:run).with "ln -s /a/path #{Pow::POW_DIR}appname"
+    Pow::Add.new '/a/path', 'appname'
   end
 end
 
 describe "Remove" do
+  it "should remove the app" do
+    Pow::Runner.should_receive(:run).with "rm #{Pow::POW_DIR}google"
+    Pow::Remove.new 'google'
+  end
 end
 
 describe "Open" do

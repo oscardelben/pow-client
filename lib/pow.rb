@@ -22,7 +22,7 @@ module Pow
 
   class Add
     def initialize path, appname=nil
-      Runner.run("ln -s #{extract_dir(path)} #{Pow::POW_DIR}#{appname}")
+      Runner.run "ln -s #{extract_dir(path)} #{Pow::POW_DIR}#{appname}"
     end
 
     private
@@ -33,6 +33,9 @@ module Pow
   end
 
   class Remove
+    def initialize appname
+      Runner.run "rm #{Pow::POW_DIR}#{appname}"
+    end
   end
 
   class Open
