@@ -9,6 +9,10 @@ Here's what you can do with it:
 * pow remove myapp # Removes current app.
 * pow open [myapp] # Opens current app or specified app in the browser.
 
+== Installation
+
+    gem install pow
+
 == Contributing to pow
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
