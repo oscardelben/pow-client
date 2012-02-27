@@ -48,4 +48,15 @@ describe "Remove" do
 end
 
 describe "Open" do
+  it "should open the app in the current directory" do
+    appname = `pwd`.chomp.split('/').last
+    Pow::Runner.should_receive(:run).with "open http://#{appname}.dev"
+    Pow::Open.new
+  end
+
+  it "should open the specified path" do
+    appname = 'rubyxp'
+    Pow::Runner.should_receive(:run).with "open http://#{appname}.dev"
+    Pow::Open.new appname
+  end
 end

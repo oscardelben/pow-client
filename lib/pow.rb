@@ -39,6 +39,10 @@ module Pow
   end
 
   class Open
+    def initialize appname=nil
+      appname ||= `pwd`.chomp.split('/').last
+      Runner.run "open http://#{appname}.dev"
+    end
   end
 
   ## Wrapper around system for easy testing
