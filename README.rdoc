@@ -1,6 +1,14 @@
 = pow
 
-Description goes here.
+This gem adds a pow executable to your command line. It is intended to
+be used together with the [pow](https://github.com/37signals/pow)
+package by 37signals.
+
+Here's what you can do with it:
+
+* pow add . [myapp] # Adds the current directory to pow.
+* pow remove myapp # Removes current app.
+* pow open [myapp] # Opens current app or specified app in the browser.
 
 == Contributing to pow
  
