@@ -60,3 +60,4 @@ describe "Open" do
     Pow::Open.new appname
   end
 end
+
