@@ -1,8 +1,7 @@
 = pow
 
 This gem adds a pow executable to your command line. It is intended to
-be used together with the [pow](https://github.com/37signals/pow)
-package by 37signals.
+be used together with the pow package by 37signals.
 
 Here's what you can do with it:
 
