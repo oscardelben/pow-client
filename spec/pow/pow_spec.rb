@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Pow::Parser do
+describe "Parser" do
 
   context "adding a project" do
 
@@ -27,11 +27,21 @@ describe Pow::Parser do
 
 end
 
-describe Pow::Add do
+describe "Add" do
+  it "should expand the current path" do
+    current_dir = `pwd`.chomp
+    Pow::Runner.should_receive(:run).with("ln -s #{current_dir} #{Pow::POW_DIR}")
+    Pow::Add.new('.')
+  end
+
+  it "should use the specified path and app name" do
+    Pow::Runner.should_receive(:run).with("ln -s /a/path #{Pow::POW_DIR}appname")
+    Pow::Add.new('/a/path', 'appname')
+  end
 end
 
-describe Pow::Remove do
+describe "Remove" do
 end
 
-describe Pow::Open do
+describe "Open" do
 end
