@@ -13,6 +13,16 @@ describe Pow::Parser do
       Pow::Remove.should_receive(:new).with('google')
       Pow::Parser.new %w{remove google}
     end
+
+    it "should call open and pass the arguments" do
+      Pow::Open.should_receive(:new).with('basecamp')
+      Pow::Parser.new %w{open basecamp}
+    end
+
+    it "should print USAGE if no match is found" do
+      $stdout.should_receive(:puts).with(Pow::USAGE)
+      Pow::Parser.new %w{sds}
+    end
   end
 
 end

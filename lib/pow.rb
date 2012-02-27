@@ -1,4 +1,7 @@
 module Pow
+
+  USAGE = "USAGE: pow add|remove|open [arguments]"
+
   class Parser
     def initialize args
       command = args.delete_at 0
@@ -7,6 +10,10 @@ module Pow
         Add.new *args
       when 'remove'
         Remove.new *args
+      when 'open'
+        Open.new *args
+      else
+        puts Pow::USAGE
       end
     end
   end
