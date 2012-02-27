@@ -14,8 +14,8 @@ require 'rake'
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
-  gem.name = "pow"
-  gem.homepage = "http://github.com/oscardelben/pow"
+  gem.name = "pow-client"
+  gem.homepage = "http://github.com/oscardelben/pow-client"
   gem.license = "MIT"
   gem.summary = %Q{Wrapper for pow}
   gem.description = %Q{Wrapper for pow}

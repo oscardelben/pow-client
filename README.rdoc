@@ -11,7 +11,7 @@ Here's what you can do with it:
 
 == Installation
 
-    gem install pow
+    gem install pow-client
 
 == Contributing to pow
  
