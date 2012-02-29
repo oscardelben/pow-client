@@ -1,6 +1,6 @@
 module Pow
 
-  USAGE = "USAGE: pow add|remove|open [arguments]"
+  USAGE = "USAGE: pow add|remove|open|restart [arguments]"
 
   POW_DIR = "~/.pow/"
 
@@ -14,6 +14,8 @@ module Pow
         Remove.new *args
       when 'open'
         Open.new *args
+      when 'restart'
+        Restart.new *args
       else
         puts Pow::USAGE
       end
@@ -42,6 +44,12 @@ module Pow
     def initialize appname=nil
       appname ||= `pwd`.chomp.split('/').last
       Runner.run "open http://#{appname}.dev"
+    end
+  end
+  
+  class Restart
+    def initialize appname=nil
+      Runner.run "touch tmp/restart.txt"
     end
   end
 

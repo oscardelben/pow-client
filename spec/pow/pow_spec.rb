@@ -19,6 +19,11 @@ describe "Parser" do
       Pow::Parser.new %w{open basecamp}
     end
 
+    it "should call restart" do
+      Pow::Restart.should_receive(:new)
+      Pow::Parser.new %w{restart}
+    end
+    
     it "should print USAGE if no match is found" do
       $stdout.should_receive(:puts).with(Pow::USAGE)
       Pow::Parser.new %w{sds}
@@ -58,6 +63,13 @@ describe "Open" do
     appname = 'rubyxp'
     Pow::Runner.should_receive(:run).with "open http://#{appname}.dev"
     Pow::Open.new appname
+  end
+end
+
+describe "Restart" do
+  it "should restart the app" do
+    Pow::Runner.should_receive(:run).with "touch tmp/restart.txt"
+    Pow::Restart.new
   end
 end
 
