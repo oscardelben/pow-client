@@ -8,6 +8,7 @@ Here's what you can do with it:
 * pow add . [myapp] # Adds the current directory to pow.
 * pow remove myapp # Removes current app.
 * pow open [myapp] # Opens current app or specified app in the browser.
+* pow restart # Restarts current app.
 
 == Installation
 

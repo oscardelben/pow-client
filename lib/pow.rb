@@ -1,6 +1,6 @@
 module Pow
 
-  USAGE = "USAGE: pow add|remove|open [arguments]"
+  USAGE = "USAGE: pow add|remove|open|restart [arguments]"
 
   POW_DIR = "~/.pow/"
 
