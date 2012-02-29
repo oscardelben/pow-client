@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "pow-client"
-  s.version = "0.1.0"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Oscar Del Ben"]
-  s.date = "2012-02-27"
+  s.date = "2012-02-29"
   s.description = "Wrapper for pow"
   s.email = "info@oscardelben.com"
   s.executables = ["pow"]
@@ -28,6 +28,7 @@ Gem::Specification.new do |s|
     "VERSION",
     "bin/pow",
     "lib/pow.rb",
+    "pow-client.gemspec",
     "pow.gemspec",
     "spec/pow/pow_spec.rb",
     "spec/spec_helper.rb"
