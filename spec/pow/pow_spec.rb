@@ -36,6 +36,12 @@ describe "Add" do
   it "should expand the current path" do
     current_dir = `pwd`.chomp
     Pow::Runner.should_receive(:run).with "ln -s #{current_dir} #{Pow::POW_DIR}"
+    Pow::Add.new
+  end
+
+  it "should expand the current path" do
+    current_dir = `pwd`.chomp
+    Pow::Runner.should_receive(:run).with "ln -s #{current_dir} #{Pow::POW_DIR}"
     Pow::Add.new '.'
   end
 

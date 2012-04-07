@@ -23,14 +23,18 @@ module Pow
   end
 
   class Add
-    def initialize path, appname=nil
+    def initialize path=nil, appname=nil
       Runner.run "ln -s #{extract_dir(path)} #{Pow::POW_DIR}#{appname}"
     end
 
     private
 
     def extract_dir path
-      path == '.' ? `pwd`.chomp : path
+      if !path or path == '.'
+        `pwd`.chomp
+      else
+        path
+      end
     end
   end
 
