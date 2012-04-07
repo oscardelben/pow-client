@@ -6,7 +6,7 @@ describe "Parser" do
 
     it "should call Pow::Add and pass the arguments" do
       Pow::Add.should_receive(:new).with('.', 'myapp')
-      Pow::Parser .new %w{add . myapp}
+      Pow::Parser.new %w{add . myapp}
     end
 
     it "should call remove and pass the arguments" do
