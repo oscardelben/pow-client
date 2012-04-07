@@ -6,7 +6,7 @@ describe "Parser" do
 
     it "should call Pow::Add and pass the arguments" do
       Pow::Add.should_receive(:new).with('.', 'myapp')
-      Pow::Parser.new %w{add . myapp}
+      Pow::Parser .new %w{add . myapp}
     end
 
     it "should call remove and pass the arguments" do
@@ -46,6 +46,12 @@ describe "Add" do
 end
 
 describe "Remove" do
+  it "should remove the app in the current directory" do
+    appname = `pwd`.chomp.split('/').last
+    Pow::Runner.should_receive(:run).with "rm #{Pow::POW_DIR}#{appname}"
+    Pow::Remove.new
+  end
+
   it "should remove the app" do
     Pow::Runner.should_receive(:run).with "rm #{Pow::POW_DIR}google"
     Pow::Remove.new 'google'

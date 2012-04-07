@@ -1,8 +1,8 @@
 module Pow
 
   USAGE = "USAGE: pow add|remove|open|restart [arguments]"
-
   POW_DIR = "~/.pow/"
+  APPNAME = `pwd`.chomp.split('/').last
 
   class Parser
     def initialize args
@@ -35,14 +35,15 @@ module Pow
   end
 
   class Remove
-    def initialize appname
+    def initialize appname=nil
+      appname ||= APPNAME
       Runner.run "rm #{Pow::POW_DIR}#{appname}"
     end
   end
 
   class Open
     def initialize appname=nil
-      appname ||= `pwd`.chomp.split('/').last
+      appname ||= APPNAME
       Runner.run "open http://#{appname}.dev"
     end
   end
