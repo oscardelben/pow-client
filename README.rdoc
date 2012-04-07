@@ -5,8 +5,8 @@ be used together with the pow package by 37signals.
 
 Here's what you can do with it:
 
-* pow add . [myapp] # Adds the current directory to pow.
-* pow remove myapp # Removes current app.
+* pow add [myapp] # Adds the current directory to pow.
+* pow remove [myapp] # Removes current app.
 * pow open [myapp] # Opens current app or specified app in the browser.
 * pow restart # Restarts current app.
 
@@ -15,7 +15,7 @@ Here's what you can do with it:
     gem install pow-client
 
 == Contributing to pow
- 
+
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it.
 * Fork the project.
