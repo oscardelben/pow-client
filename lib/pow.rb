@@ -46,7 +46,7 @@ module Pow
       Runner.run "open http://#{appname}.dev"
     end
   end
-  
+
   class Restart
     def initialize appname=nil
       Runner.run "touch tmp/restart.txt"

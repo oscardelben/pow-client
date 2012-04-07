@@ -23,7 +23,7 @@ describe "Parser" do
       Pow::Restart.should_receive(:new)
       Pow::Parser.new %w{restart}
     end
-    
+
     it "should print USAGE if no match is found" do
       $stdout.should_receive(:puts).with(Pow::USAGE)
       Pow::Parser.new %w{sds}
