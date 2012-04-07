@@ -39,21 +39,19 @@ module Pow
   end
 
   class Remove
-    def initialize appname=nil
-      appname ||= APPNAME
+    def initialize appname=APPNAME
       Runner.run "rm #{Pow::POW_DIR}#{appname}"
     end
   end
 
   class Open
-    def initialize appname=nil
-      appname ||= APPNAME
+    def initialize appname=APPNAME
       Runner.run "open http://#{appname}.dev"
     end
   end
 
   class Restart
-    def initialize appname=nil
+    def initialize
       Runner.run "touch tmp/restart.txt"
     end
   end
